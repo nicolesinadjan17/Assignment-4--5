@@ -14,10 +14,18 @@ import {
   export class StudentController {
     constructor(private readonly studentService: StudentService) {}
 
+
     @Get()
     async findAll(): Promise<Student[]> {
       return await this.studentService.findAll();
     }
       
+  
+    @Post()
+    async create(@Body() student: Partial<Student>): Promise<Student> {
+      return await this.studentService.create(student);
+    }
+  
+
   }
   
