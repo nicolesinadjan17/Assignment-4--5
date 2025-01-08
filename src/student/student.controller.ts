@@ -32,5 +32,9 @@ import {
       return await this.studentService.update(id, student);
     }
   
+    @Delete(':id')
+    async delete(@Param('id') id: number): Promise<void> {
+      return await this.studentService.delete(id);
+    }
   }
   

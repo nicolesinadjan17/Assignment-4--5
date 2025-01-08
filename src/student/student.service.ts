@@ -24,4 +24,7 @@ export class StudentService {
     return await this.studentRepository.findOne({ where: { id } });
   }
 
+  async delete(id: number): Promise<void> {
+    await this.studentRepository.delete(id);
+  }
 }
